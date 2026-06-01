@@ -17,6 +17,21 @@
 > 4. Test suite of 15+ MPI programs with seeded bugs
 > 5. Evaluation on a real MPI application (e.g., a mini-app from ECP proxy apps)
 
+## Demo
+
+📹 **Video Demo:** [Watch on Google Drive](https://drive.google.com/drive/folders/1FU4SnpB5bf7emXI_LrXMfQkrdeLf9pO2?usp=sharing)
+
+📸 **Screenshots:** See [DEMO.md](DEMO.md)
+
+## Results Summary
+
+- **Custom Test Suite:** 21/21 tests passed — 100% detection, 0 false positives
+- **MPI-CorrBench (TU Darmstadt):** 16/16 in-scope tests passed — 100% on external benchmark
+- **CoMD (ECP Proxy App):** 0 false positives, < 5% runtime overhead on ~3000-line real application
+- **Detection:** Type mismatches, buffer overlaps, collective ordering violations, deadlocks (Send-Send, Recv-Recv, tag-ordering, missing-call, N-rank circular)
+
+See [EVALUATION.md](EVALUATION.md) for detailed results, [DESIGN.md](DESIGN.md) for approach, [IMPLEMENTATION.md](IMPLEMENTATION.md) for LLVM details.
+
 ---
 
 ## Prerequisites
@@ -214,12 +229,14 @@ Expected: Errors detected on all buggy programs, clean output on correct program
 ├── runtime.cpp           # Runtime detection library
 ├── runtime.h             # Runtime header
 ├── mpiasan-cc            # Drop-in compiler wrapper (replaces mpicc)
-├── build.sh              # Build script (installs + compiles)
+├── build.sh              # Build script
 ├── run.sh                # Test runner (compiles + runs all 21 tests)
-├── README.md             # Setup and usage guide
+├── README.md             # Setup, usage, and results overview
 ├── DESIGN.md             # Approach, alternatives, design decisions
 ├── IMPLEMENTATION.md     # LLVM pass and runtime details
 ├── EVALUATION.md         # Test results, metrics, baseline comparison
+├── DEMO.md               # Video link + screenshots
+├── screenshots/          # Demo screenshots
 └── tests/                # 21 test programs with seeded MPI bugs
 ```
 
