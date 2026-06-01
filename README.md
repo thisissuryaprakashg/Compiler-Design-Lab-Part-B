@@ -255,3 +255,15 @@ Source Code (.c)
  mpirun -np N                  <- Runtime: hooks validate types, buffers, ordering, deadlocks
  libmpiasan_rt.so                 using a shadow communicator for tool-internal MPI traffic
 ```
+
+## Project Team
+
+**Section:** CSE-E1
+
+| Student Name | USN |
+|-------------|-----|
+| Surabhi R | 1RV23CS256 |
+| Surya Prakash Garlapati | 1RV23CS259 |
+| Tanisha Srivastava | 1RV23CS268 |
+
+> Developed as part of the Compiler Design Laboratory coursework.
