@@ -8,7 +8,7 @@
 >
 > **Background:** MUST (RWTH Aachen) is the closest existing tool, but it's standalone and Java-based. An LLVM-integrated approach enables compiler-level optimizations like eliding provably-safe checks and leveraging type information unavailable to external tools.
 >
-> **Objective:** Intercept MPI calls at the IR level, track buffer types/sizes and communication patterns, and flag errors at runtime with call stacks and MPI rank information.
+> **Objective:** Intercept MPI calls at the IR level, track buffer types/sizes and communication patterns, and flag errors at runtime with call stacks and MPI rank information .
 >
 > **Deliverables:**
 > 1. LLVM pass instrumenting MPI call sites with metadata capture
