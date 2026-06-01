@@ -1,0 +1,15 @@
+#!/bin/bash
+# mpiasan-cc — drop-in replacement for mpicc that adds the sanitizer
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PASS_LIB="$SCRIPT_DIR/build/MPISanPass.so"
+RT_LIB="$SCRIPT_DIR/build/libmpiasan_rt.so"
+RT_DIR="$SCRIPT_DIR/build"
+
+OMPI_CC=clang-17 mpicc \
+  -fpass-plugin="$PASS_LIB" \
+  -g \
+  "$@" \
+  -L"$RT_DIR" \
+  -lmpiasan_rt \
+  -Wl,-rpath,"$RT_DIR"

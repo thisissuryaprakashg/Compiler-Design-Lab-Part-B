@@ -1,0 +1,30 @@
+# Build artifacts
+build/
+
+# CoMD and MPI-CorrBench (downloaded separately)
+CoMD/
+MPI-Corrbench/
+MBI/
+
+# Compiled binaries
+*.o
+*.so
+*.a
+
+# CMake artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Editor files
+.vscode/
+*.swp
+*~
+
+# LLVM install script (not part of project)
+llvm.sh
+
+# Misc
+*.log
+/tmp/

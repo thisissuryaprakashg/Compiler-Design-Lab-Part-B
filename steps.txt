@@ -1,0 +1,26 @@
+Phase 1 — Environment Setup
+Open WSL and run these one by one:
+
+Step 1 — Go to your project folder
+bash
+cd /mnt/c/Users/surya/Downloads/cd_llvm
+Step 2 — Install build tools
+bash
+sudo apt update && sudo apt install -y build-essential cmake ninja-build wget
+Step 3 — Install LLVM 17
+bash
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 17
+Step 4 — Install LLVM dev headers
+bash
+sudo apt install -y llvm-17-dev clang-17 libclang-17-dev
+Step 5 — Install MPI
+bash
+sudo apt install -y libopenmpi-dev openmpi-bin
+Step 6 — Verify everything installed correctly
+bash
+llvm-config-17 --version
+clang-17 --version
+mpicc --version
+cmake --version
