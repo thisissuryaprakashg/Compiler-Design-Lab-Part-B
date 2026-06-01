@@ -209,13 +209,18 @@ Expected: Errors detected on all buggy programs, clean output on correct program
 ## Project Structure
 
 ```
-├── CMakeLists.txt      # Build system
-├── pass.cpp            # LLVM instrumentation pass (compile-time)
-├── runtime.cpp         # Runtime detection library
-├── runtime.h           # Runtime header
-├── mpiasan-cc          # Drop-in compiler wrapper (replaces mpicc)
-├── README.md           # This file
-└── tests/              # 21 test programs with seeded MPI bugs
+├── CMakeLists.txt        # Build system
+├── pass.cpp              # LLVM instrumentation pass (compile-time)
+├── runtime.cpp           # Runtime detection library
+├── runtime.h             # Runtime header
+├── mpiasan-cc            # Drop-in compiler wrapper (replaces mpicc)
+├── build.sh              # Build script (installs + compiles)
+├── run.sh                # Test runner (compiles + runs all 21 tests)
+├── README.md             # Setup and usage guide
+├── DESIGN.md             # Approach, alternatives, design decisions
+├── IMPLEMENTATION.md     # LLVM pass and runtime details
+├── EVALUATION.md         # Test results, metrics, baseline comparison
+└── tests/                # 21 test programs with seeded MPI bugs
 ```
 
 ## Architecture
