@@ -8,7 +8,7 @@
 >
 > **Background:** MUST (RWTH Aachen) is the closest existing tool, but it's standalone and Java-based. An LLVM-integrated approach enables compiler-level optimizations like eliding provably-safe checks and leveraging type information unavailable to external tools.
 >
-> **Objective:** Intercept MPI calls at the IR level, track buffer types/sizes and communication patterns, and flag errors at runtime with call stacks and MPI rank information .
+> **Objective:** Intercept MPI calls at the IR level, track buffer types/sizes and communication patterns and flag errors at runtime with call stacks and MPI rank information .
 >
 > **Deliverables:**
 > 1. LLVM pass instrumenting MPI call sites with metadata capture
@@ -25,7 +25,7 @@
 
 ## Results Summary
 
-- **Custom Test Suite:** 21/21 tests passed — 100% detection, 0 false positives
+- **Custom Test Suite:** 21/21 tests passed —> 100% detection, 0 false positives
 - **MPI-CorrBench (TU Darmstadt):** 16/16 in-scope tests passed — 100% on external benchmark
 - **CoMD (ECP Proxy App):** 0 false positives, < 5% runtime overhead on ~3000-line real application
 - **Detection:** Type mismatches, buffer overlaps, collective ordering violations, deadlocks (Send-Send, Recv-Recv, tag-ordering, missing-call, N-rank circular)
@@ -133,7 +133,7 @@ Expected: Error on test_05 and test_13. No error on test_14 (correct program).
 ./mpiasan-cc tests/test_21_coll_conditional.c -o /tmp/t21 && timeout 10 mpirun -np 2 /tmp/t21
 ```
 
-Expected: Error on test_06, 15, 18, 19, 21. No error on test_20 (correct program).
+Expected: Error on test_06, 15, 18, 19, 21. No error on test_20 (correct program)
 
 ### Deadlock Detection
 
